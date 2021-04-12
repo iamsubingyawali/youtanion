@@ -1,5 +1,9 @@
 ## YouTanion (yoo-taa-nyn)
 
+<p align="center">
+  <img width="600" src="https://user-images.githubusercontent.com/45819206/114433153-368ba380-9be1-11eb-9038-183c3aae3d90.png">
+</p>
+
 A simplified and interactive CLI based YouTube video downloader for Windows, Linux and Mac
 
 PLEASE READ this document carefully before proceeding.
