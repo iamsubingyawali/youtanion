@@ -140,7 +140,7 @@ def playlist_interaction():
     list_link = input("\nPaste the YouTube public playlist link: ")
     # checking if the input url is valid
     if check_url(list_link):
-        # try:
+        try:
             playlist = Playlist(list_link)
             # allowing user to choose between video and audio only
             video_type = input("\n1. Download Videos\n2. Download Audios Only\n\nChoose an option: ")
@@ -170,22 +170,22 @@ def playlist_interaction():
                 for video in playlist.videos:
                     print(f"Downloading and Converting > {video.title}")
                     video.streams.filter(mime_type="audio/mp4", only_audio=True).first().download(directory)
-                    # try:
-                    input_path = os.path.join(pathlib.Path(__file__).parent.absolute(),
-                                              ("Downloads/Audios/" + safe_filename(video.title) + ".mp4"))
-                    input_path = pathlib.Path(input_path)
-                    input_path.rename(input_path.with_suffix('.m4a'))
-                    # except Exception:
-                    #     continue
+                    try:
+                        input_path = os.path.join(pathlib.Path(__file__).parent.absolute(),
+                                                  ("Downloads/Audios/" + safe_filename(video.title) + ".mp4"))
+                        input_path = pathlib.Path(input_path)
+                        input_path.rename(input_path.with_suffix('.m4a'))
+                    except Exception:
+                        continue
                 print("\nSuccessfully downloaded the playlist.\n")
                 end_note()
             else:
                 print("\nInvalid option.")
                 playlist_interaction()
 
-        # except Exception:
-        #     print("\nInvalid playlist URL.")
-        #     playlist_interaction()
+        except Exception:
+            print("\nInvalid playlist URL.")
+            playlist_interaction()
     else:
         print("\nInvalid playlist URL.")
         playlist_interaction()
