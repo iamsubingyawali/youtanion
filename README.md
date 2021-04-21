@@ -20,13 +20,11 @@ Now navigate to the downloaded directory using **cd** command and run the comman
 ```sh
 pip install -r requirements.txt
 ```
-All the requirements must be installed correctly. After the requirements are installed, run the command below to start the program.
+All the requirements must be installed correctly. After the requirements are installed, run the command below to start the program. If you have multiple Python versions installed on the system, please use Python 3.
 
 ```sh
 python run.py
 ```
-
-If you have multiple Python versions installed on the system, please use Python 3.
 
 #### `Single Audio/Video Download`
 
