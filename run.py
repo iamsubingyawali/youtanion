@@ -210,7 +210,7 @@ def check_url(url):
 
 # function to show an end message after each successful operation
 def end_note():
-    print("YouTanion. Made with ❤ and Python.\n")
+    print("\nYouTanion. Made with ❤ and Python.\n")
     main()
 
 
