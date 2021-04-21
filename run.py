@@ -210,8 +210,8 @@ def check_url(url):
 
 # function to show an end message after each successful operation
 def end_note():
-    print("\nThank you for using YouTanion."
-          "\nIf you found any errors within the program, please open an issue on GitHub.")
+    print("YouTanion. Made with ❤ and Python.\n")
+    main()
 
 
 # start of the program
