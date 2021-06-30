@@ -1,5 +1,5 @@
 # YouTanion - Pronounced as 'yoo-taa-nyn'
-# v1.0 A simple CLI based interactive YouTube videos and playlist downloader using pytube
+# v1.1 A simple CLI based interactive YouTube videos and playlist downloader using pytube
 # Developed by Subin Gyawali
 
 # Note: This program was solely made for educational purposes and must not be
