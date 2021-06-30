@@ -154,8 +154,12 @@ def playlist_interaction():
                 # downloading playlist videos in highest quality
                 print("\nDownloading started. Please wait...\n")
                 for video in playlist.videos:
-                    print(f"Downloading > {video.title}")
-                    video.streams.get_highest_resolution().download(directory)
+                    if (os.path.isfile("Downloads/Videos/"+safe_filename(video.title)+".mp4")):
+                        print(f"Skipping > {video.title}")
+                        continue
+                    else:
+                        print(f"Downloading > {video.title}")
+                        video.streams.get_highest_resolution().download(directory)
                 print("\nSuccessfully downloaded the playlist.\n")
                 end_note()
 
@@ -168,15 +172,19 @@ def playlist_interaction():
                 print("\nDownloading started. Please wait...\n")
                 # downloading playlist audios
                 for video in playlist.videos:
-                    print(f"Downloading and Converting > {video.title}")
-                    video.streams.filter(mime_type="audio/mp4", only_audio=True).first().download(directory)
-                    try:
-                        input_path = os.path.join(pathlib.Path(__file__).parent.absolute(),
-                                                  ("Downloads/Audios/" + safe_filename(video.title) + ".mp4"))
-                        input_path = pathlib.Path(input_path)
-                        input_path.rename(input_path.with_suffix('.m4a'))
-                    except Exception:
+                    if (os.path.isfile("Downloads/Audios/"+safe_filename(video.title)+".m4a")):
+                        print(f"Skipping > {video.title}")
                         continue
+                    else:
+                        print(f"Downloading and Converting > {video.title}")
+                        video.streams.filter(mime_type="audio/mp4", only_audio=True).first().download(directory)
+                        try:
+                            input_path = os.path.join(pathlib.Path(__file__).parent.absolute(),
+                                                    ("Downloads/Audios/" + safe_filename(video.title) + ".mp4"))
+                            input_path = pathlib.Path(input_path)
+                            input_path.rename(input_path.with_suffix('.m4a'))
+                        except Exception:
+                            continue
                 print("\nSuccessfully downloaded the playlist.\n")
                 end_note()
             else:
