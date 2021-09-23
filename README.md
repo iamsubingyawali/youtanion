@@ -34,6 +34,17 @@ Downloading is very simple with the interactive prompt. The downloaded videos ar
 
 The playlist download is exactly similar to a single video download. The downloaded videos and audios are stored in the **youtanion/Downloads/Videos** and **youtanion/Downloads/Audios** directories respectively. The playlist to be downloaded must be a public playlist on YouTube. The playlist videos are downloaded with the highest resolution by default.
 
+## Problems?
+
+In case the app doesn't work or fails to download, run the following command to uninstall previous versions of dependencies and reinstall them and try again.
+
+```sh
+pip uninstall -r requirements.txt
+```
+
+```sh
+pip install -r requirements.txt
+```
 
 This program wouldn't have been possible without:
 
